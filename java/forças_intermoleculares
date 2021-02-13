@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		char ion, polar, hidrogenio, molpolion, resp;
+		
+		System.out.println("*Determinção das forças intermoleculares* ");
+		System.out.println();
+		
+		do {
+			System.out.println("Existem íons envolvidos? (s/n): ");
+			ion = sc.next().charAt(0);
+			
+			if (ion == 'n') {
+				System.out.println("Existem moléculas polares envolvidas? (s/n): ");
+				polar = sc.next().charAt(0);
+				if (polar == 'n') {
+					System.out.println("Resposta: Apenas forças de London (dipolos induzidos).");
+				} 
+				else {
+					System.out.println("Há átomos de hidrogênio ligados a N, O ou F? (s/n): ");
+					hidrogenio = sc.next().charAt(0);
+					if (hidrogenio == 's') {
+					System.out.println("Resposta: Ligações de hidrogênio");
+					} 
+					else {
+					System.out.println("Resposta: Forças dipolo-dipolo"); 
+					}
+				}
+			} 
+			else {
+				System.out.println("Existem moléculas polares e íons presentes? (s/n): ");
+				molpolion = sc.next().charAt(0);
+				if (molpolion == 's') {
+					System.out.println("Resposta: Forças íon-dipolo");
+				} 
+				else {
+					System.out.println("Resposta: Ligações iônicas"); 
+				}
+			}
+			System.out.println();
+			System.out.println("Deseja repetir? (s/n): ");
+			resp = sc.next().charAt(0);
+		
+		} while (resp != 'n');
+		
+		System.out.println();
+		System.out.println("*Obrigado por usar o algoritmo. O prof. Elisson agradece!*");
+		
+		sc.close();
+	}
+}
