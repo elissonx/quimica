@@ -1,0 +1,20 @@
+print("*Determinção das forças intermoleculares*")
+
+ion = input(print("Existem íons envolvidos? (s/n): "))
+
+if ion == "n":
+    polar = input(print("Existem moléculas polares envolvidas? (s/n): "))
+    if polar == "n":
+      print("Resposta: Apenas forças de London (dipolos induzidos)")
+    else:
+      hidrogenio = input(print("Há átomos de hidrogênio ligados a N, O ou F? (s/n): "))
+      if hidrogenio == "s":
+        print("Resposta: Ligações de hidrogênio")
+      else:
+        print("Resposta: Forças de dipolo-dipolo")
+else:
+    mol_pol_ion = input(print("Existe moléculas polares e íons presentes? (s/n): "))
+    if mol_pol_ion == "s":
+      print("Resposta: Forças íon-dipolo")
+    else:
+      print("Resposta: Ligações iônicas")
