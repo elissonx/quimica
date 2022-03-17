@@ -1,0 +1,30 @@
+#após análise do excel, podemos avaliar também por Python
+#transcreva este código para o google collab ou IDE
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.array([0,50,100,200,300]) #tempo
+y = np.array([100,127,154,208,263]) #1/NO2
+
+plt.plot(x, y, 'o')
+m, b = np.polyfit(x, y, 1)
+plt.plot(x, m*x + b)
+plt.xlabel("Tempo", fontsize = 16)
+plt.ylabel("1/NO2", fontsize = 16)
+plt.title("Gráfico de 2ª ordem", fontsize = 16)
+plt.show()
+
+correlacao = np.corrcoef(x, y)
+correlacao #R²
+
+#forma da equação da reta: y = m*x + b
+print(f'o coef. angular é {m:.3f} + e o linear é" {b:.1f}.')
+
+t = [0, 50, 120, 3600] #testando diferentes tempos
+
+#1/NO2 = 0,543*tempo + 100
+#NO2 = 1/(0,543*tempo + 100)
+y = 1/(0.543 * np.array(t) + 99.8)
+
+np.round(y, 4)
