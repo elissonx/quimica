@@ -1,0 +1,43 @@
+print("************************************************************")
+print("*********Cálculo da equação do gás ideal por Python*********")
+print("*****************R = 0,08206 L.atm/mol.k********************")
+
+print()
+
+var = input("Digite o que deseja calcular exatamente como descrito em parênteses e use pontos, e não vírgulas, nos números: (P/V/T/n) ")
+R = 0.08206
+decisao = "sim"
+print()
+
+while (decisao != "não"):
+  if var == "P":
+    V = float(input("Qual o volume em litros? "))
+    T = float(input("Qual a temperatura em Kelvin? "))
+    N = float(input("Qual o número de mols? "))
+    print()
+    print("A pressão do gás, para R = 0,08206, é: ", round(((N*R*T)/V),2), " atm")
+  elif var == "V":
+    P = float(input("Qual a pressão em atm? "))
+    T = float(input("Qual a temperatura em Kelvin? "))
+    N = float(input("Qual o número de mols? "))
+    print()
+    print("O volume do gás, para R = 0,08206, é: ", round(((N*R*T)/P),2), " litros")
+  elif var == "T":
+    P = float(input("Qual a pressão em atm? "))
+    V = float(input("Qual o volume em litros? "))
+    N = float(input("Qual o número de mols? "))
+    print()
+    print("A temperatura do gás, para R = 0,08206, é: ", round(((P*V)/(N*R)),2), " K")
+  elif var == "n":
+    P = float(input("Qual a pressão em atm? "))
+    V = float(input("Qual o volume em litros? "))
+    T = float(input("Qual a temperatura em Kelvin? "))
+    print()
+    print("O número de mol do gás, para R = 0,08206, é: ", round(((P*V)/(R*T)),2), " mol")
+  else:
+    print("Você não digitou corretamente, tente novamente como descrito: (P/V/T/n)")
+  print()
+  decisao = input("Deseja calcular outra variável? (sim/não) ")
+
+print()
+print("Obrigado por usar o algoritmo. O Prof. Elisson agradece!")
