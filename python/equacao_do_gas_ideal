@@ -3,12 +3,12 @@ print("*********Cálculo da equação do gás ideal por Python*********")
 print("*****************R = 0,08206 L.atm/mol.k********************")
 print()
 
-var = input("Digite o que deseja calcular exatamente como descrito em parênteses e use pontos, e não vírgulas, nos números: (P/V/T/n) ")
 R = 0.08206
 decisao = "sim"
-print()
 
 while (decisao != "não"):
+  var = input("Digite o que deseja calcular exatamente como descrito em parênteses e use pontos, e não vírgulas, nos números: (P/V/T/n) ")
+  print()
   if var == "P":
     V = float(input("Qual o volume em litros? "))
     T = float(input("Qual a temperatura em Kelvin? "))
@@ -37,6 +37,6 @@ while (decisao != "não"):
     print("Você não digitou corretamente, tente novamente como descrito: (P/V/T/n)")
   print()
   decisao = input("Deseja calcular outra variável? (sim/não) ")
-print()
+  print()
 
 print("Obrigado por usar o algoritmo. O Prof. Elisson agradece!")
